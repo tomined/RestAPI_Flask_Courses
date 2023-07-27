@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="container-fluid bg-primary text-white py-5">
+        <div class="container">
+            <h1>Dashboard</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat odit quas assumenda tempore eveniet
+                obcaecati in et iure laborum officiis? Facilis, commodi quasi? Quibusdam, inventore! Eveniet adipisci
+                deserunt ut debitis!</p>
+            <a href="./add" class="btn btn-light">Add New</a>
+        </div>
+
+    </div>
+
+    <div>
+        <h1>Nazwa</h1>
+
+        <div>
+            <h1>All Courses</h1>
+            <div>
+                {% for course in courses %}
+
+                    <h3>{{course.name}}</h3>
+
+                {% endfor %}
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+{% endblock %}
