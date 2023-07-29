@@ -2,34 +2,44 @@
 
 {% block content %}
 
-    <div class="container-fluid bg-primary text-white py-5">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <div class="bg-image container-fluid bg-primary text-white py-5" style="background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/003.webp');">
         <div class="container">
+        <!-- <div class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white" style="background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/003.webp');"> -->
             <h1>Dashboard</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat odit quas assumenda tempore eveniet
                 obcaecati in et iure laborum officiis? Facilis, commodi quasi? Quibusdam, inventore! Eveniet adipisci
                 deserunt ut debitis!</p>
             <a href="./add" class="btn btn-light">Add New</a>
+            <a href="./list" class="btn btn-light" data-mdb-toggle="btn btn-light" title="Show detail table for all courses">List</a>
+
         </div>
-
+        <!-- </div> -->
     </div>
-
+ 
     <div>
-        <h1>Nazwa</h1>
-
-        <div>
+        <!-- <h1>Nazwa</h1> -->
+        <div class="container">
             <h1>All Courses</h1>
             <div>
-                {% for course in courses %}
-
-                    <h3>{{course.name}}</h3>
-
-                {% endfor %}
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    {% for course in courses %}
+                        <div class="col">
+                            <div class="card">
+                                <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" class="card-img-top" alt="Hollywood Sign on The Hill"/>
+                                <div class="card-body">
+                                <h5 class="card-title">{{course.name}}</h5>
+                                <p class="card-text">
+                                    <b>{{course.price}}zł</b> 
+                                </p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}   
+                </div>   
             </div>
-
         </div>
-
     </div>
-
-
 
 {% endblock %}

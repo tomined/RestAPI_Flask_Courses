@@ -34,3 +34,9 @@ def add_course():
         return redirect('/')
 
     return render_template("add.html", form=form)
+
+@app.route('/list', methods=['GET'])
+def course_list():
+    courses = enumerate(courses_collection.find(),1)
+    index = 0
+    return render_template("list.html",courses=courses, index=index)
